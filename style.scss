@@ -1,0 +1,122 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+$titulo: hsl(234, 12%, 34%);
+$paragrafo:  hsl(229, 6%, 66%);
+$fundoBody:  hsl(0, 0%, 98%);
+
+$vermelho: hsl(0, 78%, 62%);
+$ciano: hsl(180, 62%, 55%);
+$laranja: hsl(34, 97%, 64%);
+$azul: hsl(212, 86%, 64%);
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    @include flexCenter();
+    background-color: $fundoBody;
+
+    width: 100%;
+    height: 100vh;
+
+    .primario {
+        @include flexCenter();
+        flex-direction: column;
+        margin-top: 80px;
+
+        #tituloPrimario, #subtituloPrimario{
+            color: $titulo;
+            width: 500px;
+        }
+        #tituloPrimario {
+            font-weight: 300;
+            font-size: 40px;
+        }
+        #subtituloPrimario {
+            font-weight: 600;
+            font-size: 41px;
+        }
+        #paragrafoPrimario {
+            display: flex;
+            text-align: center;
+            color: $paragrafo;
+
+            margin-top: 20px;
+            font-size: 15px;
+           
+        }
+    }
+
+    main {
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        section {
+            background-color: #ffff;
+
+            width: 400px;
+            height: 280px;
+
+            box-shadow: 1px 6px 15px 3px rgba(77, 121, 171, 0.266);
+            margin: 30px;
+            border-radius: 10px;
+
+            #titulo {
+                color: $titulo;
+
+                margin-left: 30px;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                font-weight: 600;
+            }
+            #paragrafo {
+                color: $paragrafo;
+                margin-left: 30px;
+                font-size: 15px;
+            }
+            img {
+                margin-left: 300px;
+                margin-top: 50px;
+                width: 80px;
+            }
+        }
+        .esquerda {
+            border-top: 5px solid $ciano;
+        }
+        .centroTeamBuilder {
+            border-top: 5px solid $vermelho;
+        }
+        .centroKarma {
+            border-top: 5px solid $laranja;
+        }
+        .direita {
+            border-top: 5px solid $azul;
+        }
+
+    }
+}
+
+@media (min-width: 200px) and (max-width: 800px) {
+
+    body {
+        height: 165vh;
+        main {
+          display: flex;
+          flex-direction: column;
+
+          margin-top: 250px;
+        }
+    }
+    
+}
